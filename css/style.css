@@ -1,0 +1,162 @@
+@font-face {
+       font-family: FreightBlack;
+       src: url(../webfonts/freight-text-black.otf);
+    }
+
+    @font-face {
+       font-family: FreightText;
+       src: url(../webfonts/freight-text-book.otf);
+    }
+
+
+    h1, h2, h3, h4, h5 { 
+      font-family: FreightBlack; 
+      font-weight: normal; 
+      font-style: normal; 
+      font-size: 20px;
+    }
+    p {
+      font-family: FreightText; 
+      font-weight: normal; 
+      font-style: normal; 
+      font-size: 24px;
+    }
+
+    body {
+      overflow: scroll;
+      margin: 0px;
+      padding: 0px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #FEFEFE;
+    }
+
+    .wrap {
+       width: 250px;
+       height: auto;
+       display: block;
+       padding-left: 10px;
+    }
+
+    .row {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    #pagetitle {
+      padding-top: 30px;
+    }
+
+    #value-sentences {
+      padding-bottom: 30px;
+    }
+
+    #value-link {
+      padding-bottom: 30px;
+    }
+
+    .block {
+        position: relative;
+        display: block;
+        width: 100%;
+        float: left;
+        height: auto;
+        padding: 0;
+        margin: 0.5%;
+        float: left;
+        padding-top: 10px;
+      }
+    
+    .block-top {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 83%;
+        height: auto;
+        padding: 10px;
+        font-family: FreightBlack;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .block-bottom {
+        position: relative;
+        display: inline-block;
+        float: left;
+        width: 70%;
+        height: auto;
+        padding: 10px 0;
+        text-align: left;
+        font-size: 14px;
+        font-family: FreightText;
+    }
+    .block-bottom-value {
+        float: right;
+        position: relative;
+        display: inline-block;
+        width: 20%;
+        height: auto;
+        padding: 10px 0;
+        text-align: left;
+        font-size: 14px;
+        font-family: FreightText;
+    }
+    .align-center {
+      text-align: center;
+      width: 100%;
+    }
+
+    .text-results {
+      width: 100%;
+      line-height: 16px;
+      display: block;
+      height: auto;
+      float: left;
+      padding: 0 0 10px 10px;
+      font-family: FreightText, sans-serif;
+      text-align: left;
+      color: #FF6500;
+      font-size: 12px;
+    }
+
+    .button {
+        position: relative;
+        display: block;
+        height: auto;
+        padding: 0;
+        margin: 0.85%;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        padding-bottom: 20px;
+    }
+
+     a {
+      width: 100%;
+      line-height: 20px;
+      display: block;
+      height: auto;
+      float: left;
+      padding: 10px 0 0px 0px;
+      font-family: FreightText, sans-serif;
+      text-align: center;
+      color: #FF6500;
+      font-size: 12px;
+    }
+
+    .button:hover {
+        color: red;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+    }
+
+    #message {
+      display: none;
+    }
