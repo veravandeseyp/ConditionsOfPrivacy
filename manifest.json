@@ -5,20 +5,21 @@
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
-  "background": {
-      "persistent": false,
-      "scripts": ["background.js"]
-  },
-  "content_scripts": [{
-    "matches": ["http://*/*"],
-      "js" : ["content.js"]
-  }],
+  // "background": {
+  //     "persistent": false,
+  //     "scripts": ["background.js"]
+  // },
+  // "content_scripts": [{
+  //   "matches": ["http://*/*"],
+  //     "js" : ["content.js"]
+  // }],
 
   "browser_action": {
       "default_title": "The Conditions of Privacy.",
       "default_icon": "icon.png",
       "default_popup": "popup.html",
-      "default_badge": "icon.png"
+      "default_badge": "icon.png",
+      "run_at": "document_end"
   },
   "manifest_version": 2
 }

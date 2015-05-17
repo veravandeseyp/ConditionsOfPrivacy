@@ -421,6 +421,15 @@ function delayFunction() {
   };
 }
 
+function directFunction() {
+    getNumbers();
+    getTotalNumberOfWords;
+    if( resultsDisplayed == false ) {
+        getNextWord();
+        resultsDisplayed = true;
+    };
+}
+
 $(document).ready( function() {
-   delayFunction();
+    directFunction();
 });
