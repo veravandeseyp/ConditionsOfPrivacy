@@ -4,25 +4,20 @@
     <script src="javascripts/jquery-latest.min.js"></script>
     <script src="javascripts/popup.js" type="text/javascript"></script>
     <script src="javascripts/show.js" type="text/javascript"> </script>
-    <style type="text/css">
-    @font-face {
-           font-family: FreightBlack;
-           src: url(../webfonts/freight-text-black.otf);
-        }
+    <link rel="stylesheet" type="text/css" href="webfont.karla/webfont.css">
+    <link rel="stylesheet" type="text/css" href="webfont.lilgrotesk/webfont.css">
 
-        @font-face {
-           font-family: FreightText;
-           src: url(../webfonts/freight-text-book.otf);
-        }
+    <style type="text/css">
+
 
         h1, h2, h3, h4, h5 { 
-          font-family: FreightBlack; 
+          font-family: 'lilgroteskbold'; 
           font-weight: normal; 
           font-style: normal; 
           font-size: 20px;
         }
         p {
-          font-family: FreightText; 
+          font-family: 'karlaregular'; 
           font-weight: normal; 
           font-style: normal; 
           font-size: 24px;
@@ -87,7 +82,7 @@
             width: 83%;
             height: auto;
             padding: 10px;
-            font-family: FreightBlack;
+            font-family: 'lilgroteskbold';
             font-size: 20px;
             text-align: center;
         }
@@ -101,7 +96,7 @@
             padding: 10px 0;
             text-align: left;
             font-size: 14px;
-            font-family: FreightText;
+            font-family: 'karlaregular';
         }
         .block-bottom-value {
             float: right;
@@ -112,7 +107,7 @@
             padding: 10px 0;
             text-align: left;
             font-size: 14px;
-            font-family: FreightText;
+            font-family: 'karlaregular';
         }
         .align-center {
           text-align: center;
@@ -121,12 +116,12 @@
 
         .text-results {
           width: 100%;
-          line-height: 16px;
+          line-height: 18px;
           display: block;
           height: auto;
           float: left;
-          padding: 0 0 10px 10px;
-          font-family: FreightText, sans-serif;
+          padding: 0 0 0 10px;
+          font-family: 'karlaregular';
           text-align: left;
           color: #FF6500;
           font-size: 12px;
@@ -144,22 +139,30 @@
             padding-bottom: 20px;
         }
 
-         a {
-          width: 100%;
+        a {
+          width: auto;
           display: block;
           height: auto;
-          float: left;
-          padding: 10px 0 0px 0px;
-          font-family: FreightText, sans-serif;
-          text-align: left;
-          color: #FF6500;
+          clear: both;
+          font-family: 'karlaregular';
           font-size: 12px;
+          float: left;
+          margin: 0% 0 0% 0px;
+          color: #FF6500;
+          text-decoration: none;
+          word-wrap: break-word;
+          -webkit-transition: all .3s;
+          transition: all .3s;
+        }
+        a:hover {
+          background-color: #FF6500;
+          color: white;
         }
 
         .button:hover {
             color: red;
-            -webkit-transition: all 1s;
-            transition: all 1s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
         }
 
         #message {

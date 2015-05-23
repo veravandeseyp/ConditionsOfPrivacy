@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'lilgroteskbold';
+    src: url('lilgrotesk_bold.eot');
+    src: url('lilgrotesk_bold.eot?#iefix') format('embedded-opentype'),
+         url('lilgrotesk_bold.woff') format('woff'),
+         url('lilgrotesk_bold.ttf') format('truetype'),
+         url('lilgrotesk_bold.svg#lilgroteskbold') format('svg');
+}
+
+

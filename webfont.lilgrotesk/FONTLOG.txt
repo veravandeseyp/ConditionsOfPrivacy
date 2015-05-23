@@ -1,0 +1,90 @@
+
+  FONTLOG: LilGrotesk
+
+  --------------------------------------------
+  LilGrotesk-Bold
+  --------------------------------------------
+
+  This file provides detailed information on the Lil Grotesk 
+  font Software.
+  This information should be distributed along with the Lil 
+  Grotesk font and any derivative works.
+  
+  Lil Grotesk Font Information
+  
+  Lil Grotesk is a sans-serif typeface in two weights made by 
+  Bastien Sozoo.
+  
+  ChangeLog
+  
+  22 Jan 2015 (Christoph Haag)
+- corrected weight in PS Names and OS/2
+  
+  8 Oct 2014 (Christoph Haag) 
+- created fontforge sources as base to work on GNU/Linux
+- added FONTLOG to .sfdir
+- Mastered Font from Fontforge SFDIR to 
+  UFO,OTF,TTF,EOT,WOFF,SVG
+  
+  17 Jan 2013 (Bastien Sozoo)
+- Initital release.
+  
+  Acknowledgements
+  
+  If you make modifications be sure to add your name (N), 
+  email (E), web-address (if you have one) (W) and 
+  description (D). This list is in alphabetical order.
+  
+  N: Christoph Haag
+  E: christoph@lafkon.net
+  W: www.lafkon.net
+  D: Transformer
+  
+  N: Bastien Sozoo
+  E: contact@sozoo.fr
+  W: www.sozoo.fr
+  D: Designer
+
+
+  --------------------------------------------
+  LilGrotesk-Regular
+  --------------------------------------------
+
+  This file provides detailed information on the Lil Grotesk 
+  font Software.
+  This information should be distributed along with the Lil 
+  Grotesk font and any derivative works.
+  
+  Lil Grotesk Font Information
+  
+  Lil Grotesk is a sans-serif typeface in two weights made by 
+  Bastien Sozoo.
+  
+  ChangeLog
+  
+  8 Oct 2014 (Christoph Haag) 
+- created fontforge sources as base to work on GNU/Linux
+- added FONTLOG to .sfdir
+- Mastered Font from Fontforge SFDIR to 
+  UFO,OTF,TTF,EOT,WOFF,SVG
+  
+  17 Jan 2013 (Bastien Sozoo)
+- Initital release.
+  
+  Acknowledgements
+  
+  If you make modifications be sure to add your name (N), 
+  email (E), web-address (if you have one) (W) and 
+  description (D). This list is in alphabetical order.
+  
+  N: Christoph Haag
+  E: christoph@lafkon.net
+  W: www.lafkon.net
+  D: Transformer
+  
+  N: Bastien Sozoo
+  E: contact@sozoo.fr
+  W: www.sozoo.fr
+  D: Designer
+
+
