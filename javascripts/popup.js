@@ -9,7 +9,7 @@ chrome.extension.onMessage.addListener(function(request, sender) {
 chrome.extension.onMessage.addListener(function(request, sender) {
   if (request.action == "getName") {
   	var title = document.querySelector('#pagetitle');
-    title.innerText = request.source;    
+    title.innerText = "The conditions of " + request.source + " summarized";    
   }
 });
 
@@ -30,7 +30,6 @@ chrome.extension.onMessage.addListener(function(request, sender) {
 
 chrome.extension.onMessage.addListener(function(request, sender) {
   if (request.action == "getCurrentURL") {
-    
     currentURL = request.source;
   }
 });
@@ -40,6 +39,7 @@ function onWindowLoad() {
   var message = document.querySelector('#message');
   var title = document.querySelector('#pagetitle');
   var link = document.querySelector('#link');
+
 
   chrome.tabs.executeScript(null, {
     file: "javascripts/getPagesSource.js"
@@ -55,15 +55,32 @@ function onWindowLoad() {
     var pageLink = document.querySelector('#value-link');
 
     if( currentURL !==  linkLink ) {
-      // pageAnalysis.style.display = 'none';
-      // totalWords.style.display = 'none';
-      // totalSent.style.display = 'none';
+      pageAnalysis.style.display = 'none';
+      totalWords.style.display = 'none';
+      totalSent.style.display = 'none';
     } else {
       pageLink.style.display = 'none';
     }
   });
 
 }
+
+function colorWord( inputText ) {
+  console.log( inputText );
+
+  // chrome.extension.sendMessage({
+  //   action: "colorWord",
+  //   source: inputText
+  // });
+
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, 
+      { action: "colorWord", source: inputText } );
+  });
+
+}
+
+
 
 
 window.onload = onWindowLoad;

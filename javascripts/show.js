@@ -1,3 +1,10 @@
+// ----------------------------------------------
+
+//    Conditions_ 
+//    Written by Vera van de Seyp, 2015
+
+// ---------------------------------------------- 
+
 var timeoutID;
 // Execute appending only once
 var resultsDisplayed = false;
@@ -80,7 +87,10 @@ function getNumbers() {
 
 // Fetches the next word(s) after the search term
 function getNextWord() {
-  var txt = $('#message').text().toLowerCase();
+
+  var txt = $('#message').text()
+  // .toLowerCase()
+  ;
 
   var divCan = $("#whatwecan");
   var divCollect = $("#whatwecollect");
@@ -88,13 +98,12 @@ function getNextWord() {
   var divUse = $("#whatweuse");
   var divWill = $("#whatwewill");
 
-  var whatWeCan = txt.match(/(we can )(\w+)/g);
-  var whatWeCollect = txt.match(/(we collect )(\w+)/g);
-  var whatWeMay = txt.match(/(we may )(\w+)/g);
-  var whatWeUse = txt.match(/(we use )(\w+)/g);
-  var whatWeWill = txt.match(/(we will )(\w+)/g);
+  var whatWeCan = txt.match(/([wW]e can )(\w+)/g);
+  var whatWeCollect = txt.match(/([wW]e collect )(\w+)/g);
+  var whatWeMay = txt.match(/([wW]e may )(\w+)/g);
+  var whatWeUse = txt.match(/([wW]e use )(\w+)/g);
+  var whatWeWill = txt.match(/([wW]e will )(\w+)/g);
   
- 
   //  Linguistic exceptions: edit and append 
   var Ceach = 0;
   var Cof = 0;
@@ -127,14 +136,14 @@ function getNextWord() {
     var cans = String(whatWeCan.join());
       cans = cans.split(',');
     for( var i = 0; i < cans.length; i++ ) {
-      if( cans[i] == "we can each" ) {
-        var newcans = txt.match(/(we can each )(\w+)/g);
+      if( cans[i] == /[wW]e can each/g ) {
+        var newcans = txt.match(/([wW]e can each )(\w+)/g);
         newcans = String(newcans.join());
         newcans = newcans.split(',');
         cans[i] = newcans[Ceach];
         Ceach+=1;
-      } else if( cans[i] == "we can of" ) {
-        var newcans = txt.match(/(we can of )(\w+) (\w+)/g);
+      } else if( cans[i] == /[wW]e can of/g ) {
+        var newcans = txt.match(/([wW]e can of )(\w+) (\w+)/g);
         newcans = String(newcans.join());
         newcans = newcans.split(',');
         cans[i] = newcans[Cof];
@@ -142,10 +151,10 @@ function getNextWord() {
       } else {
         cans[i] = cans[i];
       }
-      cans[i] = cans[i].replace("we can ", "");  
+      cans[i] = cans[i].replace(/[wW]e can /g, "");  
     }
     cans = String(cans);
-    cans = cans.replace(/,/g, '<br>')
+    cans = '<a href="#">' + cans.replace(/,/g, '</a><br><a href="#">') + '</a>';
     divCan.append( cans );
   }
 
@@ -154,8 +163,8 @@ function getNextWord() {
     var collects = String(whatWeCollect.join());
       collects = collects.split(',');
     for( var i = 0; i < collects.length; i++ ) {
-      if( collects[i] == "we collect and" ) {
-        var newcollects = txt.match(/(we collect and )(\w+)/g);
+      if( collects[i] == /[wW]e collect and/g ) {
+        var newcollects = txt.match(/([wW]e collect and )(\w+)/g);
         // for( var j = 0; j < newcollects.length; j++ ) {
         //   if( newcollects[j] == "we collect and why") {
         //     newcollects.splice(j, 1);
@@ -166,20 +175,20 @@ function getNextWord() {
         newcollects = newcollects.split(',');
         collects[i] = newcollects[CLLand];
         CLLand+=1;
-      } else if( collects[i] == "we collect it" ) {
+      } else if( collects[i] == /[wW]e collect it/g ) {
         var newcollects = collects.splice( i, 1);
         newcollects = String(newcollects.join());
         newcollects = newcollects.split(',');
         // collects[i] = newcollects[CLLit];
         // CLLit+=1;
-      } else if( collects[i] == "we collect device" ) {
-        var newcollects = txt.match(/(we collect device).(\w+)/g);
+      } else if( collects[i] == /[wW]e collect device/g ) {
+        var newcollects = txt.match(/([wW]e collect device).(\w+)/g);
         newcollects = String(newcollects.join());
         newcollects = newcollects.split(',');
         collects[i] = newcollects[CLLdev];
         CLLdev+=1;
-      } else if( collects[i] == "we collect from" ) {
-        var newcollects = txt.match(/(we collect from).(\w+).(\w+).(\w+).(\w+)/g);
+      } else if( collects[i] == /[wW]e collect from/g ) {
+        var newcollects = txt.match(/([wW]e collect from).(\w+)/g);
         newcollects = String(newcollects.join());
         newcollects = newcollects.split(',');
         collects[i] = newcollects[CLLfrom];
@@ -187,10 +196,10 @@ function getNextWord() {
       } else {
         collects[i] = collects[i];
       }
-     collects[i] = collects[i].replace("we collect ", "");  
+     collects[i] = collects[i].replace(/[wW]e collect /g, "");  
     }
     collects = String(collects);
-    collects = collects.replace(/,/g, '<br>')
+    collects = '<a href="#">' + collects.replace(/,/g, '</a><br><a href="#">') + '</a>';
     divCollect.append( collects );
   }
 
@@ -199,32 +208,32 @@ function getNextWord() {
     var mays = String(whatWeMay.join());
       mays = mays.split(',');
     for( var i = 0; i < mays.length; i++ ) {
-      if( mays[i] == "we may also" ) {
-        var newmays = txt.match(/(we may also )(\w+)/g);
+      if( mays[i] == /[wW]e may also/g ) {
+        var newmays = txt.match(/([wW]e may also )(\w+)/g);
         newmays = String(newmays.join());
         newmays = newmays.split(',');
         mays[i] = newmays[Malso];
         Malso+=1;
-      } else if (mays[i] == "we may later" ){
-        var newmays = txt.match(/(we may later )(\w+)/g);
+      } else if (mays[i] == /[wW]e may later/ ){
+        var newmays = txt.match(/([wW]e may later )(\w+)/g);
         newmays = String(newmays.join());
         newmays = newmays.split(',');
         mays[i] = newmays[Mlater];
         Mlater+=1;
-      } else if (mays[i] == "we may be" ){
-        var newmays = txt.match(/(we may be )(\w+)/g);
+      } else if (mays[i] == /[wW]e may be/g ){
+        var newmays = txt.match(/([wW]e may be )(\w+)/g);
         newmays = String(newmays.join());
         newmays = newmays.split(',');
         mays[i] = newmays[Mbe];
         Mbe+=1;
-      } else if (mays[i] == "we may not" ){
-        var newmays = txt.match(/(we may not )(\w+)/g);
+      } else if (mays[i] == /[wW]e may not/g ){
+        var newmays = txt.match(/([wW]e may not )(\w+)/g);
         newmays = String(newmays.join());
         newmays = newmays.split(',');
         mays[i] = newmays[Mnot];
         Mnot+=1;
-      } else if (mays[i] == "we may have" ){
-        var newmays = txt.match(/(we may have )(\w+)/g);
+      } else if (mays[i] == /[wW]e may have/g ){
+        var newmays = txt.match(/([wW]e may have )(\w+)/g);
         newmays = String(newmays.join());
         newmays = newmays.split(',');
         mays[i] = newmays[Mhave];
@@ -232,10 +241,10 @@ function getNextWord() {
       } else {
         mays[i] = mays[i];
       }
-     mays[i] = mays[i].replace("we may ", "");  
+     mays[i] = mays[i].replace(/[wW]e may /g, "");  
     }
     mays = String(mays);
-    mays = mays.replace(/,/g, '<br>')
+    mays = '<a href="#">' + mays.replace(/,/g, '</a><br><a href="#">') + '</a>';
     divMay.append( mays );
   }
 
@@ -244,32 +253,32 @@ function getNextWord() {
     var uses = String(whatWeUse.join());
       uses = uses.split(',');
     for( var i = 0; i < uses.length; i++ ) {
-      if( uses[i] == "we use that" ) {
-        var newuses = txt.match(/(we use that )(\w+)/g);
+      if( uses[i] == /[wW]e use that/g ) {
+        var newuses = txt.match(/([wW]e use that )(\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Uthat];
         Uthat+=1;
-      } else if( uses[i] == "we use the" ) {
-        var newuses = txt.match(/(we use the )(\w+)/g);
+      } else if( uses[i] == /[wW]e use the/g ) {
+        var newuses = txt.match(/([wW]e use the )(\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Uthe];
         Uthe+=1;
-      } else if( uses[i] == "we use to" ) {
-        var newuses = txt.match(/(we use to )(\w+)/g);
+      } else if( uses[i] == /[wW]e use to/g ) {
+        var newuses = txt.match(/([wW]e use to )(\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Uto];
         Uto+=1;
-      } else if( uses[i] == "we use for" ) {
-        var newuses = txt.match(/(we use for )(\w+)/g);
+      } else if( uses[i] == /[wW]e use for/g ) {
+        var newuses = txt.match(/(w[wW] use for )(\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Ufor];
         Ufor+=1;
-      } else if( uses[i] == "we use various" ) {
-        var newuses = txt.match(/(we use various )(\w+)/g);
+      } else if( uses[i] == /[wW]e use various/g ) {
+        var newuses = txt.match(/([wW]e use various )(\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Uvar];
@@ -280,14 +289,14 @@ function getNextWord() {
       //   newuses = newuses.split(',');
       //   uses[i] = newuses[Uit];
       //   Uit+=1;
-      } else if( uses[i] == "we use this" ) {
-        var newuses = txt.match(/(we use this )(\w+)/g);
+      } else if( uses[i] == /[wW]e use this/g ) {
+        var newuses = txt.match(/([wW]e use this )(\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Uthis];
         Uthis+=1;
-      } else if( uses[i] == "we use certain" ) {
-        var newuses = txt.match(/(we use certain )(\w+) (\w+)/g);
+      } else if( uses[i] == /[wW]e use certain/g ) {
+        var newuses = txt.match(/([wW]e use certain )(\w+) (\w+)/g);
         newuses = String(newuses.join());
         newuses = newuses.split(',');
         uses[i] = newuses[Ucert];
@@ -295,10 +304,10 @@ function getNextWord() {
       } else {
         uses[i] = uses[i];
       }
-      uses[i] = uses[i].replace("we use ", "");  
+      uses[i] = uses[i].replace(/[wW]e use /g, "");  
     }
     uses = String(uses);
-    uses = uses.replace(/,/g, '<br>')
+    uses = '<a href="#">' + uses.replace(/,/g, '</a><br><a href="#">') + '</a>';
     divUse.append( uses );
   }
 
@@ -307,14 +316,14 @@ function getNextWord() {
     var wills = String(whatWeWill.join());
       wills = wills.split(',');
     for( var i = 0; i < wills.length; i++ ) {
-      if( wills[i] == "we will not" ) {
-        var newwills = txt.match(/(we will not )(\w+)/g);
+      if( wills[i] == /[wW]e will not/g ) {
+        var newwills = txt.match(/([wW]e will not )(\w+)/g);
         newwills = String(newwills.join());
         newwills = newwills.split(',');
         wills[i] = newwills[Wnot];
         Wnot+=1;
-      } else if( wills[i] == "we will also" ) {
-        var newwills = txt.match(/(we will also )(\w+)/g);
+      } else if( wills[i] == /[wW]e will also/g ) {
+        var newwills = txt.match(/([wW]e will also )(\w+)/g);
         newwills = String(newwills.join());
         newwills = newwills.split(',');
         wills[i] = newwills[Walso];
@@ -322,10 +331,10 @@ function getNextWord() {
       } else {
         wills[i] = wills[i];
       }
-     wills[i] = wills[i].replace("we will ", "");  
+     wills[i] = wills[i].replace(/[wW]e will /g, "");  
     }
     wills = String(wills);
-    wills = wills.replace(/,/g, '<br>')
+    wills = '<a href="#">' + wills.replace(/,/g, '</a><br><a href="#">') + '</a>';
     divWill.append( wills );
   }
 
@@ -334,10 +343,10 @@ function getNextWord() {
     if( whatWeCan == null ) {
     } else {
       for( var i = 0; i < whatWeCan.length; i++ ) {
-        whatWeCan[i] = whatWeCan[i].replace("we can ", "");  
+        whatWeCan[i] = whatWeCan[i].replace(/[wW]e can /g, "");  
       }
       whatWeCan = String(whatWeCan.join());
-      whatWeCan = whatWeCan.replace(/,/g, '<br>');
+      whatWeCan = '<a href="#">' + whatWeCan.replace(/,/g, '</a><br><a href="#">') + '</a>';
       divCan.append(whatWeCan);
     }
   }
@@ -346,10 +355,10 @@ function getNextWord() {
     if( whatWeCollect == null ) {
     } else {
       for( var i = 0; i < whatWeCollect.length; i++ ) {
-        whatWeCollect[i] = whatWeCollect[i].replace("we collect ", "");  
+        whatWeCollect[i] = whatWeCollect[i].replace(/[wW]e collect /g, "");  
       }
       whatWeCollect = String(whatWeCollect.join());
-      whatWeCollect = whatWeCollect.replace(/,/g, '<br>');
+      whatWeCollect = '<a href="#">' + whatWeCollect.replace(/,/g, '</a><br><a href="#">') + '</a>';
       divCollect.append(whatWeCollect);
     }
   }
@@ -358,10 +367,10 @@ function getNextWord() {
     if( whatWeMay == null ) {
     } else {
       for( var i = 0; i < whatWeMay.length; i++ ) {
-        whatWeMay[i] = whatWeMay[i].replace("we may ", "");  
+        whatWeMay[i] = whatWeMay[i].replace(/[wW]e may /g, "");  
       }
       whatWeMay = String(whatWeMay.join());
-      whatWeMay = whatWeMay.replace(/,/g, '<br>');
+      whatWeMay = '<a href="#">' + whatWeMay.replace(/,/g, '</a><br><a href="#">') + '</a>';
       divMay.append(whatWeMay);
     }
   }
@@ -370,10 +379,10 @@ function getNextWord() {
     if( whatWeUse == null ) {
     } else {
       for( var i = 0; i < whatWeUse.length; i++ ) {
-        whatWeUse[i] = whatWeUse[i].replace("we use ", "");  
+        whatWeUse[i] = whatWeUse[i].replace(/[wW]e use /g, "");  
       }
       whatWeUse = String(whatWeUse.join());
-      whatWeUse = whatWeUse.replace(/,/g, '<br>');
+      whatWeUse = '<a href="#">' + whatWeUse.replace(/,/g, '</a><br><a href="#">') + '</a>';
       divUse.append(whatWeUse);
     }
   }
@@ -382,13 +391,15 @@ function getNextWord() {
     if( whatWeWill == null ) {
     } else {
       for( var i = 0; i < whatWeWill.length; i++ ) {
-        whatWeWill[i] = whatWeWill[i].replace("we will ", "");  
+        whatWeWill[i] = whatWeWill[i].replace(/[wW]e will /g, "");  
       }
       whatWeWill = String(whatWeWill.join());
-      whatWeWill = whatWeWill.replace(/,/g, '<br>');
+      whatWeWill = '<a href="#">' + whatWeWill.replace(/,/g, '</a><br><a href="#">') + '</a>';
       divWill.append(whatWeWill);
     }
   }
+
+  $( 'a' ).click( markWord );
 }
 
 // Get the total number of words + sentences on the page
@@ -430,6 +441,16 @@ function directFunction() {
     };
 }
 
+function markWord( ) {
+  var grouptext = $( this ).parent( ).prev( ).prev( ).text( );
+  var itemtext = $( this ).text( );
+
+  var searchtext = grouptext + ' ' + itemtext;
+
+  colorWord( searchtext );
+}
+
+
 $(document).ready( function() {
-    directFunction();
+    delayFunction();
 });

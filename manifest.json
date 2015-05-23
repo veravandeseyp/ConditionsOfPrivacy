@@ -5,15 +5,6 @@
   "permissions": [
     "tabs", "http://*/*", "https://*/*"
   ],
-  // "background": {
-  //     "persistent": false,
-  //     "scripts": ["background.js"]
-  // },
-  // "content_scripts": [{
-  //   "matches": ["http://*/*"],
-  //     "js" : ["content.js"]
-  // }],
-
   "browser_action": {
       "default_title": "The Conditions of Privacy.",
       "default_icon": "icon.png",
