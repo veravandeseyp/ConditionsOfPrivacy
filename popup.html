@@ -20,7 +20,7 @@
           font-family: 'karlaregular'; 
           font-weight: normal; 
           font-style: normal; 
-          font-size: 24px;
+          font-size: 20px;
         }
 
         body {
@@ -31,14 +31,14 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background-color: #FEFEFE;
         }
 
         .wrap {
-           width: 250px;
+           width: 300px;
            height: auto;
            display: block;
            padding-left: 10px;
+           background-image: ur('http://wallpapervacations.com/wp-content/uploads/2013/07/Palm-Tree-Photos-122.jpg');
         }
 
         .row {
@@ -79,23 +79,22 @@
             position: relative;
             display: inline-block;
             float: left;
-            width: 83%;
             height: auto;
-            padding: 10px;
+            padding: 20px;
             font-family: 'lilgroteskbold';
             font-size: 20px;
-            text-align: center;
+            text-align: left;
         }
 
         .block-bottom {
             position: relative;
             display: inline-block;
             float: left;
-            width: 70%;
+            width: 50%;
             height: auto;
-            padding: 10px 0;
+            padding: 10px 20px;
             text-align: left;
-            font-size: 14px;
+            font-size: 20px;
             font-family: 'karlaregular';
         }
         .block-bottom-value {
@@ -106,37 +105,12 @@
             height: auto;
             padding: 10px 0;
             text-align: left;
-            font-size: 14px;
+            font-size: 20px;
             font-family: 'karlaregular';
         }
         .align-center {
           text-align: center;
           width: 100%;
-        }
-
-        .text-results {
-          width: 100%;
-          line-height: 18px;
-          display: block;
-          height: auto;
-          float: left;
-          padding: 0 0 0 10px;
-          font-family: 'karlaregular';
-          text-align: left;
-          color: #FF6500;
-          font-size: 12px;
-        }
-
-        .button {
-            position: relative;
-            display: block;
-            height: auto;
-            padding: 0;
-            margin: 0.85%;
-            cursor: pointer;
-            background-color: white;
-            color: black;
-            padding-bottom: 20px;
         }
 
         a {
@@ -145,7 +119,7 @@
           height: auto;
           clear: both;
           font-family: 'karlaregular';
-          font-size: 12px;
+          font-size: 10px;
           float: left;
           margin: 0% 0 0% 0px;
           color: #FF6500;
@@ -157,6 +131,35 @@
         a:hover {
           background-color: #FF6500;
           color: white;
+        }
+
+        .text-results {
+          width: 100%;
+          display: block;
+          height: auto;
+          float: left;
+          padding: 0 0 0 20px;
+          font-family: 'karlaregular';
+          text-align: left;
+          color: #FF6500;
+          font-size: 16px;
+          line-height: 18px;
+        }
+      .text-results a {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+        .button {
+            position: relative;
+            display: block;
+            height: auto;
+            padding: 0;
+            margin: 0.85%;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            padding-bottom: 20px;
         }
 
         .button:hover {
@@ -174,7 +177,7 @@
   <body data-pinterest-extension-installed="cr1.35">
     <div class="wrap">
       <div class="row">
-          <div id="pagetitle" class="block-top"> No info for this site</div>
+          <div id="pagetitle" class="block-top"></div>
           <div id="value-page" class="block">
 
           <div class="block-bottom">we can</div>
@@ -215,7 +218,7 @@
       </div>
 
       <div class="row">
-        <div class="block-top" id="value-link" > Conditions:<br> <a target="_blank" id="link"> </a> </div>
+        <div class="block-top" id="value-link" > <br> <a target="_blank" id="link"> </a> </div>
       </div>
       <div id="message" class="block-top button"></div>
       <!-- <iframe id="myIframe" display="none" src="https://www.google.com/intl/en/policies/terms/" style="height:500px;width:100%;"></iframe> -->

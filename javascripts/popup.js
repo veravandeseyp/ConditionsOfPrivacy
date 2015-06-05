@@ -9,7 +9,11 @@ chrome.extension.onMessage.addListener(function(request, sender) {
 chrome.extension.onMessage.addListener(function(request, sender) {
   if (request.action == "getName") {
   	var title = document.querySelector('#pagetitle');
-    title.innerText = "The conditions of " + request.source + " summarized";    
+    if( request.source != " ") {
+         title.innerText = "The conditions " + request.source + " summarized";  
+    }  else {
+        title.innerText = "The conditions of this website are not documented yet.";
+    }
   }
 });
 

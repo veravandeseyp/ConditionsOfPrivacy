@@ -16,44 +16,44 @@ function nameString() {
   var url = window.location.href;
   var urlPieces = url.split('.');
   var siteName = urlPieces[1];
-  var errorString = 'This site is not documented yet';
+  var errorString = ' ';
 
   if( siteName == 'dropbox' ) {
-      return "Dropbox";
+      return "of Dropbox";
   } else if ( siteName == 'facebook') {
-      return  "Facebook";
+      return "of Facebook";
   } else if ( siteName == 'google') {
-      return  "Google";
+      return "of Google";
   } else if ( siteName == 'last') {
-      return  "Last.fm";
+      return "of Last.fm";
   } else if ( siteName == 'linkedin') {
-      return  "LinkedIn";
+      return "of LinkedIn";
   } else if ( siteName == 'pinterest') {
-      return  "Pinterest";
+      return "of Pinterest";
   } else if ( siteName == 'twitter') {
-      return  "Twitter";
+      return "of Twitter";
   } else if ( siteName == 'yahoo') {
-      return  "Yahoo";
+      return "of Yahoo";
   } else if ( siteName == 'youtube') {
-      return  "YouTube";
+      return "of YouTube";
   } else if ( siteName == 'tumblr') {
-      return "Tumblr";
+      return "of Tumblr";
   } else if ( siteName == 'vimeo' ) {
-      return "Vimeo";
+      return "of Vimeo";
   } else if ( siteName == 'spotify' ) {
-      return "Spotify";
+      return "of Spotify";
   } else if ( siteName == 'amazon' ) {
-      return "Amazon";
+      return "of Amazon";
   } else if ( siteName == 'taobao' ) { 
-      return "Taobao";
+      return "of Taobao";
   } else if ( siteName == 'baidu' ) { 
-      return "Baidu";
+      return "of Baidu";
   } else if ( siteName == 'ebay' ) { 
-      return "eBay";
+      return "of eBay";
   } else if ( siteName == 'wikipedia' ) { 
-      return "Wikipedia";
+      return "of Wikipedia";
   } else if ( siteName == 'reddit' ) { 
-      return "Reddit";
+      return "of Reddit";
   } else {
       return errorString;
   } 
