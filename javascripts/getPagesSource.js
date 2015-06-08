@@ -55,7 +55,10 @@ function nameString() {
   } else if ( siteName == 'reddit' ) { 
       return "of Reddit";
   } else {
-      return errorString;
+      var firstLetter = siteName[0].toUpperCase();
+      var restLetters = siteName.substr(1);
+
+      return "of " + firstLetter + restLetters;
   } 
 }
 

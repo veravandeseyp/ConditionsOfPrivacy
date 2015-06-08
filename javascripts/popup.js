@@ -59,9 +59,9 @@ function onWindowLoad() {
     var pageLink = document.querySelector('#value-link');
 
     if( currentURL !==  linkLink ) {
-      pageAnalysis.style.display = 'none';
-      totalWords.style.display = 'none';
-      totalSent.style.display = 'none';
+      // pageAnalysis.style.display = 'none';
+      // totalWords.style.display = 'none';
+      // totalSent.style.display = 'none';
     } else {
       pageLink.style.display = 'none';
     }
@@ -70,7 +70,6 @@ function onWindowLoad() {
 }
 
 function colorWord( inputText ) {
-  console.log( inputText );
 
   // chrome.extension.sendMessage({
   //   action: "colorWord",
