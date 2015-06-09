@@ -9,20 +9,6 @@
 
     <style type="text/css">
 
-
-        h1, h2, h3, h4, h5 { 
-          font-family: 'lilgroteskbold'; 
-          font-weight: normal; 
-          font-style: normal; 
-          font-size: 20px;
-        }
-        p {
-          font-family: 'karlaregular'; 
-          font-weight: normal; 
-          font-style: normal; 
-          font-size: 20px;
-        }
-
         body {
           overflow: scroll;
           margin: 0px;
@@ -34,7 +20,7 @@
         }
 
         .wrap {
-           width: 300px;
+           width: 250px;
            height: auto;
            display: block;
            padding-left: 10px;
@@ -80,9 +66,9 @@
             display: inline-block;
             float: left;
             height: auto;
-            padding: 20px;
+            padding: 10px;
             font-family: 'lilgroteskbold';
-            font-size: 20px;
+            font-size: 18px;
             text-align: left;
         }
 
@@ -92,25 +78,44 @@
             float: left;
             width: 50%;
             height: auto;
-            padding: 10px 20px;
+            padding: 15px 10px 5px 10px;
             text-align: left;
-            font-size: 20px;
+            font-size: 16px;
             font-family: 'karlaregular';
         }
+
         .block-bottom-value {
             float: right;
             position: relative;
             display: inline-block;
             width: 20%;
             height: auto;
-            padding: 10px 0;
+            padding: 15px 0 5px 10px;
             text-align: left;
-            font-size: 20px;
+            font-size: 16px;
             font-family: 'karlaregular';
         }
+
+        .text-results {
+          width: 100%;
+          display: block;
+          height: auto;
+          float: left;
+          padding: 0 0 0 10px;
+          font-family: 'karlaregular';
+          text-align: left;
+          color: #FF6500;
+        }
+
+        .text-results a {
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+
         .align-center {
           text-align: center;
-          width: 100%;
+          width: 90%;
         }
 
         a {
@@ -119,7 +124,7 @@
           height: auto;
           clear: both;
           font-family: 'karlaregular';
-          font-size: 10px;
+          font-size: 12px;
           float: left;
           margin: 0% 0 0% 0px;
           color: #FF6500;
@@ -132,23 +137,6 @@
           background-color: #FF6500;
           color: white;
         }
-
-        .text-results {
-          width: 100%;
-          display: block;
-          height: auto;
-          float: left;
-          padding: 0 0 0 20px;
-          font-family: 'karlaregular';
-          text-align: left;
-          color: #FF6500;
-          font-size: 16px;
-          line-height: 18px;
-        }
-      .text-results a {
-        font-size: 14px;
-        line-height: 18px;
-      }
 
         .button {
             position: relative;
@@ -171,6 +159,10 @@
         #message {
           display: none;
         }
+
+        #total-sentences {
+          padding-bottom: 20px;
+        }
     </style>
     
   </head>
@@ -179,6 +171,8 @@
       <div class="row">
           <div id="pagetitle" class="block-top"></div>
           <div id="value-page" class="block">
+
+            <div class="block-top" id="value-link" > <br> <a target="_blank" id="link"> </a> </div>
 
           <div class="block-bottom">we can</div>
           <div id="wecan" class="block-bottom-value"> </div>
@@ -201,7 +195,7 @@
           <div id="whatwewill" class="text-results"> </div>
 
         </div>
-      </div>
+    </div>
       
       <div id="value-words" class="row">
         <div class="block">
@@ -216,10 +210,7 @@
           <div id="total-sentences" class="block-bottom align-center"> </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="block-top" id="value-link" > <br> <a target="_blank" id="link"> </a> </div>
-      </div>
+      
       <div id="message" class="block-top button"></div>
       <!-- <iframe id="myIframe" display="none" src="https://www.google.com/intl/en/policies/terms/" style="height:500px;width:100%;"></iframe> -->
 

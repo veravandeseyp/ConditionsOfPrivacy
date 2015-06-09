@@ -148,6 +148,18 @@ function getNextWord() {
         newcans = newcans.split(',');
         cans[i] = newcans[Cof];
         Cof+=1;
+      } else if( cans[i] == /[wW]e can still/g ) {
+        var newcans = txt.match(/([wW]e can still )(\w+)/g);
+        newcans = String(newcans.join());
+        newcans = newcans.split(',');
+        cans[i] = newcans[Cof];
+        Cof+=1;
+      } else if( cans[i] == /[wW]e can be/g ) {
+        var newcans = txt.match(/([wW]e can be )(\w+)/g);
+        newcans = String(newcans.join());
+        newcans = newcans.split(',');
+        cans[i] = newcans[Cof];
+        Cof+=1;
       } else {
         cans[i] = cans[i];
       }
@@ -160,17 +172,11 @@ function getNextWord() {
 
   if( whatWeCollect == null ) {
   } else {
-    var collects = String(whatWeCollect.join());
+      var collects = String(whatWeCollect.join());
       collects = collects.split(',');
     for( var i = 0; i < collects.length; i++ ) {
       if( collects[i] == /[wW]e collect and/g ) {
         var newcollects = txt.match(/([wW]e collect and )(\w+)/g);
-        // for( var j = 0; j < newcollects.length; j++ ) {
-        //   if( newcollects[j] == "we collect and why") {
-        //     newcollects.splice(j, 1);
-        //     console.log( newcollects.splice(j, 1) );
-        //   }
-        // }
         newcollects = String(newcollects.join());
         newcollects = newcollects.split(',');
         collects[i] = newcollects[CLLand];
@@ -179,8 +185,8 @@ function getNextWord() {
         var newcollects = collects.splice( i, 1);
         newcollects = String(newcollects.join());
         newcollects = newcollects.split(',');
-        // collects[i] = newcollects[CLLit];
-        // CLLit+=1;
+        collects[i] = newcollects[CLLit];
+        CLLit+=1;
       } else if( collects[i] == /[wW]e collect device/g ) {
         var newcollects = txt.match(/([wW]e collect device).(\w+)/g);
         newcollects = String(newcollects.join());
@@ -188,7 +194,7 @@ function getNextWord() {
         collects[i] = newcollects[CLLdev];
         CLLdev+=1;
       } else if( collects[i] == /[wW]e collect from/g ) {
-        var newcollects = txt.match(/([wW]e collect from).(\w+)/g);
+        var newcollects = txt.match(/([wW]e collect from )(\w+)/g);
         newcollects = String(newcollects.join());
         newcollects = newcollects.split(',');
         collects[i] = newcollects[CLLfrom];
